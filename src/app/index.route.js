@@ -8,5 +8,5 @@ export function routerConfig ($stateProvider, $urlRouterProvider) {
       controllerAs: 'main'
     });
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/friends');
 }

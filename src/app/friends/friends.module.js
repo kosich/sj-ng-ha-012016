@@ -1,4 +1,7 @@
 import FriendListController from './list/friend-list.controller.js';
+import FriendCardDirective from './list/card/friend-card.directive.js';
+import FriendCardController from './list/card/friend-card.controller.js';
+
 import FriendPageController from './page/friend-page.controller.js';
 
 angular.module('friends', [])
@@ -19,5 +22,11 @@ angular.module('friends', [])
       });
 
   })
+  // list
   .controller('FriendListController', FriendListController)
+
+  .directive('sjFriendCard', FriendCardDirective)
+  .controller('FriendCardController', FriendCardController)
+
+  // page
   .controller('FriendPageController', FriendPageController);

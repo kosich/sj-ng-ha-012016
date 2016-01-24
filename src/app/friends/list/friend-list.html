@@ -1,3 +1,7 @@
-<div ng-repeat="friend in vm.friends track by $index">
-  <sj-friend-card card="friend"></sj-friend-card>
+<div>
+  <h2>My Friends</h2>
+
+  <div ng-repeat="friend in vm.friends track by $index">
+    <sj-friend-card card="friend"></sj-friend-card>
+  </div>
 </div>

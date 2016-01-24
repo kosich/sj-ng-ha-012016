@@ -1,14 +1,11 @@
-<div class="friend-page">
-    {{ vm.card.name }}'s Profile
-    <span>back</span>
-
+<a ui-sref="friendPage(vm.card)"
+  ui-sref-opts=""
+  class="friend-card">
     <img ng-src="{{vm.card.img}}" alt="{{::vm.card.name}}'s photo"/>
-
     <span>{{ vm.card.name }}</span>
-
     <span>{{ vm.card.status }}</span>
-
     <span>{{ vm.card.address }}</span>
-
-    <span>{{ vm.card.bio }}</span>
-</div>
+    <span>
+      delete
+    </span>
+</a>
