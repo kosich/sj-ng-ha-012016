@@ -1,29 +1,21 @@
-export default function FriendListController(){ 'ngInject';
+export default function FriendListController(friendsService){ 'ngInject';
 
-  const vm = this;
+    const vm = this;
 
-  vm.deleteFriend = deleteFriend;
+    vm.deleteFriend = deleteFriend;
 
-  init();
+    init();
 
-  function init(){
-    vm.friends = [
-      {
-        id: 'id1',
-        name : 'name 1',
-        status: 'status 1',
-        address: 'address 1'
-      }, {
-        id: 'id2',
-        name: 'name 2',
-        status: 'status 2',
-        address: 'address 2'
-      }
-    ];
-  }
+    function init(){
+        friendsService.query().then(friends=>{
+            vm.friends=friends;
+        });
+    }
 
-  function deleteFriend(){
-    // some service .delete
-  }
+    function deleteFriend(friend){
+        friendsService.remove(friend.id).then(()=>{
+            // vm.friends.remove(friend);
+        });
+    }
 
 }
