@@ -1,8 +1,7 @@
-export default function FriendListController(friendsService){ 'ngInject';
+export default function FriendListController(friendsService, toastr){ 'ngInject';
 
     const vm = this;
-
-    vm.deleteFriend = deleteFriend;
+    vm.onFriendRemove = onFriendRemove;
 
     init();
 
@@ -12,10 +11,26 @@ export default function FriendListController(friendsService){ 'ngInject';
         });
     }
 
-    function deleteFriend(friend){
-        friendsService.remove(friend.id).then(()=>{
-            // vm.friends.remove(friend);
-        });
+    function onFriendRemove(friendToRemove){
+        friendsService.remove(friendToRemove.id)
+            .then(removeFriendFromList)
+            .then(showSuccessToastr)
+            .catch(showFailToastr);
+
+
+        function removeFriendFromList(){
+            let removeIndex = vm.friends.findIndex(f=>f.id===friendToRemove.id);
+            vm.friends.splice(removeIndex, 1);
+        }
+
+        function showSuccessToastr(){
+            toastr.success(`${friendToRemove.name} has been removed from friends`);
+        }
+
+        function showFailToastr(){
+            toastr.error(`Failed to remove ${friendToRemove.name} from friends`);
+        }
+
     }
 
 }

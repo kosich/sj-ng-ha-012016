@@ -1,7 +1,9 @@
-<div>
+<md-content>
     <h2>My Friends</h2>
 
-    <div ng-repeat="friend in vm.friends track by $index">
-        <sj-friend-card card="friend"></sj-friend-card>
+    <div ng-repeat="friend in vm.friends track by friend.id">
+        <sj-friend-card 
+          on-remove="vm.onFriendRemove"
+          friend="friend"></sj-friend-card>
     </div>
-</div>
+</md-content>

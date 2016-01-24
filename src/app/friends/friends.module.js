@@ -3,7 +3,6 @@ import friendsService from './friends.service.js';
 
 import FriendListController from './list/friend-list.controller.js';
 import friendCardDirective from './list/card/friend-card.directive.js';
-import FriendCardController from './list/card/friend-card.controller.js';
 
 import FriendPageController from './page/friend-page.controller.js';
 
@@ -33,7 +32,6 @@ angular.module('friends', [])
     .controller('FriendListController', FriendListController)
 
     .directive('sjFriendCard', friendCardDirective)
-    .controller('FriendCardController', FriendCardController)
 
     // page
     .controller('FriendPageController', FriendPageController);

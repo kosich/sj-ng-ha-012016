@@ -1,14 +1,17 @@
 <div class="friend-page">
-    {{ vm.card.name }}'s Profile
-    <span>back</span>
+    <header>
+        <h2>{{ vm.card.name }}'s Profile</h2>
+        <sj-history-back><i class="material-icons">keyboard_arrow_left</i> back</sj-history-back>
+    </header>
 
     <img ng-src="{{vm.card.photo}}" alt="{{::vm.card.name}}'s photo"/>
 
-    <span>{{ vm.card.name }}</span>
+    <div>{{ vm.card.name }}</div>
 
-    <span>{{ vm.card.status }}</span>
+    <div>{{ vm.card.status }}</div>
 
-    <span>{{ vm.card.address }}</span>
+    <div>{{ vm.card.address }}</div>
 
-    <span>{{ vm.card.bio }}</span>
+    <div>{{ vm.card.bio }}</div>
+
 </div>

@@ -1,0 +1,12 @@
+.friend-card {
+    &__image {
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    &__status, &__name, &__address {
+      display: inline-block;
+      float: left;
+      margin-left: 50px;
+    }
+}
